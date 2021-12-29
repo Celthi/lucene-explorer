@@ -21,12 +21,18 @@ then
     git clone https://github.com/adoptium/jdk11u.git 
     cd jdk11u 
     #   git switch -c <new-branch-name> 
-fi 
+fi
+echo "export PATH=$PATH:$JVM_HOME/jdk-11.0.13+8/bin" >> ~/.bashrc
+echo "export JAVA_HOME=$JVM_HOME/jdk-11.0.13+8/" >> ~/.bashrc
+echo "export PATH=$PATH:$JVM_HOME/jdk-11.0.13+8/bin" >> ~/.zshrc
+echo "export JAVA_HOME=$JVM_HOME/jdk-11.0.13+8/" >> ~/.zshrc
+
 git checkout cf0dad3c2382 
 WORKSPACE=/workspace/
 mkdir -p $WORKSPACE
 cd $WORKSPACE
 wget https://archive.apache.org/dist/lucene/java/8.10.0/lucene-8.10.0-src.tgz
 tar xvf lucene-8.10.0-src.tgz
+
 
 
